@@ -41,6 +41,21 @@
 	</main>
 
 	<script id="clock.js">
+		const time = document.getElementById('time');
+		const clock = document.getElementById('clock');
+
+
+
+		function setTime() {
+			let now = new Date();
+			now = now.toLocaleTimeString();
+			time.textContent = now;
+			time.style.top = (Math.random() * clock.offsetHeight) + 'px';
+			time.style.left = (Math.random() * (clock.offsetWidth - 200)) + 'px';
+			time.style.color = '#'+(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
+		}
+
+		setInterval(setTime, 3000);
 
 
 	</script>
