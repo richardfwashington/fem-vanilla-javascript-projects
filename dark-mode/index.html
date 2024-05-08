@@ -84,6 +84,9 @@
 			// Set button content
 			this.closeButton.setAttribute('type', 'submit');
 			this.closeButton.textContent = 'Close';
+			this.element.addEventListener('submit', (e) => {
+				e.preventDefault();
+			});
 
 		}
 
