@@ -86,6 +86,7 @@
 			this.closeButton.textContent = 'Close';
 			this.element.addEventListener('submit', (e) => {
 				e.preventDefault();
+				e.target.parentElement.parentElement.close();
 			});
 
 		}
