@@ -32,8 +32,8 @@
 
 	<nav style="align-self:center;">
 
-		<label>
-			<input type="checkbox" id="toggle" name="toggle" role="switch" checked="checked">
+		<label id="dark-mode">
+			<input type="checkbox" id="toggle" name="toggle" role="switch" checked>
 			Use dark mode
 		</label>
 
@@ -72,7 +72,19 @@
 		closeButton = document.createElement('button');
 
 		constructor(type, title, content) {
-			console.error('Form constructor not implemented')
+			// Assign the heading and button as children of the form
+			this.element.appendChild(this.heading);
+			this.element.appendChild(content); 
+			this.element.appendChild(this.closeButton);
+
+			// Wire up other user provided input
+			this.form.setAttribute('type', type);
+			this.heading.textContent = title;
+
+			// Set button content
+			closeButton.setAttribute('type', 'submit');
+			closeButton.textContent = 'Close';
+
 		}
 
 	}
