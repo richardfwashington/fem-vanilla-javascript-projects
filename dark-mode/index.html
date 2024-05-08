@@ -78,12 +78,12 @@
 			this.element.appendChild(this.closeButton);
 
 			// Wire up other user provided input
-			this.form.setAttribute('type', type);
+			this.element.setAttribute('type', type);
 			this.heading.textContent = title;
 
 			// Set button content
-			closeButton.setAttribute('type', 'submit');
-			closeButton.textContent = 'Close';
+			this.closeButton.setAttribute('type', 'submit');
+			this.closeButton.textContent = 'Close';
 
 		}
 
@@ -94,9 +94,13 @@
 		dialog = document.createElement('dialog');
 
 		constructor(name, parentElement, contentElement) {
-			// Set up the instance object
+			this.name = name;
+			this.openButton.setAttribute('id', name);
+			this.openButton.textContent = name;
+			this.parent = parentElement;
+			this.content = contentElement;
 			this.#setupForm();
-			console.error('Modal constructor not implemented')
+			this.#registerOpenListener();
 		}
 
 		#setupForm() {
@@ -106,10 +110,16 @@
 			this.dialog.appendChild(article);
 		}
 
+		#registerOpenListener() {
+			const dialog = this.dialog;
+			this.openButton.addEventListener('click', () => {
+				dialog.showModal();
+			});
+		}
 
 		render() {
-			// Attach the elements to the DOM
-			console.error('render method not implemented')
+			this.parent.replaceChildren(this.openButton);
+			this.parent.appendChild(this.dialog);
 		}
 	}
 
