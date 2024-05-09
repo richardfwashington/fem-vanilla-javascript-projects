@@ -8,5 +8,8 @@
     "find": "node whereAmI.js"
   },
   "author": "Richard Washington",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cowsay": "^1.6.0"
+  }
 }
