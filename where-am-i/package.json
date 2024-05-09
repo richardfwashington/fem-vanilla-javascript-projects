@@ -1,0 +1,11 @@
+{
+  "name": "where-am-i",
+  "version": "1.0.0",
+  "description": "Tells you where you are in the file system",
+  "main": "whereAmI.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Richard Washington",
+  "license": "ISC"
+}
