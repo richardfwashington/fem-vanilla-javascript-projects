@@ -1,7 +1,7 @@
 import './style.css'
 import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+import { setupCounter } from './src/counter.js'
 
 document.querySelector('#app').innerHTML = `
   <div>
@@ -18,7 +18,16 @@ document.querySelector('#app').innerHTML = `
     <p class="read-the-docs">
       Click on the Vite logo to learn more
     </p>
+    <video id="video"></video>
   </div>
 `
 
-setupCounter(document.querySelector('#counter'))
+setupCounter(document.querySelector('#counter'));
+
+/*const avStream = await navigator.mediaDevices.getUserMedia({audio: true, video: true});
+const video = document.querySelector('#video');
+video.srcObject = avStream;
+await video.play();*/
+
+
+
