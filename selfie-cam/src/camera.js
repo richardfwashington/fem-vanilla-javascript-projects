@@ -12,5 +12,7 @@ export async function getVideo() {
 
 export function drawVideo(video, canvas) {
   const context = canvas.getContext("2d");
-  context.drawImage(video, 0, 0);
+  canvas.width = video.videoWidth;
+  canvas.height = video.videoHeight;
+  context.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
 }
