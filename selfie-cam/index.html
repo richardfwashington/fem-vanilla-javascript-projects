@@ -7,10 +7,18 @@
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app"></div>
-    <canvas id="canvas"></canvas>
-    <!--<script type="module" src="/src/canvas.js"></script>-->
-    <script type="module" src="/src/camera.js"></script>
+    <div id="app">
+      <div>
+        <a href="https://vitejs.dev" target="_blank">
+          <img src="./vite.svg" class="logo" alt="Vite logo" />
+        </a>
+        <h1>Hello Self!</h1>
+        <canvas id="canvas"></canvas>
+        <div class="card">
+          <button id="take" type="button">Take Selfie</button>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
